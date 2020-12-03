@@ -1,0 +1,14 @@
+F:\Anitha\Final\Alphasource.Libs.Promocodes.Business\obj\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Business.AssemblyInfoInputs.cache
+F:\Anitha\Final\Alphasource.Libs.Promocodes.Business\obj\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Business.AssemblyInfo.cs
+F:\Anitha\Final\Alphasource.Libs.Promocodes.Business\obj\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Business.csproj.CoreCompileInputs.cache
+F:\Anitha\Final\Alphasource.Libs.Promocodes.Business\bin\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Business.deps.json
+F:\Anitha\Final\Alphasource.Libs.Promocodes.Business\bin\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Business.dll
+F:\Anitha\Final\Alphasource.Libs.Promocodes.Business\bin\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Business.pdb
+F:\Anitha\Final\Alphasource.Libs.Promocodes.Business\bin\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Models.dll
+F:\Anitha\Final\Alphasource.Libs.Promocodes.Business\bin\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Repositories.dll
+F:\Anitha\Final\Alphasource.Libs.Promocodes.Business\bin\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Models.pdb
+F:\Anitha\Final\Alphasource.Libs.Promocodes.Business\bin\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Repositories.pdb
+F:\Anitha\Final\Alphasource.Libs.Promocodes.Business\obj\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Business.csprojAssemblyReference.cache
+F:\Anitha\Final\Alphasource.Libs.Promocodes.Business\obj\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Business.csproj.CopyComplete
+F:\Anitha\Final\Alphasource.Libs.Promocodes.Business\obj\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Business.dll
+F:\Anitha\Final\Alphasource.Libs.Promocodes.Business\obj\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Business.pdb

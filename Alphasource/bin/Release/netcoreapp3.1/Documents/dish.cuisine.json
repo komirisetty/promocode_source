@@ -1,0 +1,22 @@
+[
+  {
+    "label": "Indian",
+    "value": "1"
+  },
+  {
+    "label": "Chinese",
+    "value": "2"
+  },
+  {
+    "label": "Continental",
+    "value": "3"
+  },
+  {
+    "label": "Snacks",
+    "value": "4"
+  },
+  {
+    "label": "Other",
+    "value": "5"
+  }
+]

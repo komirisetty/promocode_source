@@ -1,0 +1,54 @@
+[
+  {
+    "value": "1",
+    "label": "Top Offers"
+  },
+  {
+    "value": "2",
+    "label": "Top Rated"
+  },
+  {
+    "value": "3",
+    "label": "Most Ordered"
+  },
+  {
+    "value": "4",
+    "label": "Quick Delivery"
+  },
+  //{
+  //  "value": "5",
+  //  "label": "Self Pickup"
+  //},
+  {
+    "value": "6",
+    "label": "Vegan Only"
+  },
+  {
+    "value": "7",
+    "label": "Veg Only"
+  },
+  //{
+  //  "value": "8",
+  //  "label": "Calories"
+  //},
+  //{
+  //  "value": "9",
+  //  "label": "Protein"
+  //},
+  //{
+  //  "value": "10",
+  //  "label": "Carbs"
+  //},
+  //{
+  //  "value": "11",
+  //  "label": "Fibre"
+  //},
+  //{
+  //  "value": "12",
+  //  "label": "Combo"
+  //},
+  {
+    "value": "13",
+    "label": "Recently Viewed"
+  }
+]

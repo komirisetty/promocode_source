@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Alphasource.Libs.Promocodes.Business.Interfaces\Alphasource.Libs.Promocodes.Business.Interfaces.csproj" />
+    <ProjectReference Include="..\Alphasource.Libs.Promocodes.Models\Alphasource.Libs.Promocodes.Models.csproj" />
+    <ProjectReference Include="..\Alphasource.Libs.Promocodes.Repositories\Alphasource.Libs.Promocodes.Repositories.Impl.csproj" />
+  </ItemGroup>
+
+</Project>

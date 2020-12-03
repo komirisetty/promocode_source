@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AlphaSource.Lib.PromoCode</name>
+    </assembly>
+    <members>
+        <member name="M:AlphaSource.Lib.PromoCode.Controllers.AllocatePromoCodeFranchiseController.GetAllocatedFranchise(System.String)">
+            <summary>
+            Gets the promocodes given by the franchisee.
+            </summary>
+            <param name="campaignName">campaignName</param>
+            <returns></returns>
+        </member>
+        <member name="M:AlphaSource.Lib.PromoCode.Controllers.AllocatePromoCodeFranchiseController.Create(AlphaSource.Lib.PromoCode.Resources.SaveFranchisePromoCodesResource)">
+            <summary>
+            Admin allocates the Promocode to their franchise
+            </summary>
+            <param name="saveFranchisePromoCodesResource"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AlphaSource.Lib.PromoCode.Controllers.AllocatePromoCodeFranchiseController.Update(AlphaSource.Lib.PromoCode.Resources.SaveFranchisePromoCodesResource)">
+             <summary>
+            Update the promocode details.
+             </summary>
+             <remarks>It is used to update promocode</remarks>
+        </member>
+        <member name="M:AlphaSource.Lib.PromoCode.Helpers.StartupHelper.AddRepositories(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Register Repositories
+            </summary>
+            <param name="services"></param>
+            <param name="configuration"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AlphaSource.Lib.PromoCode.Helpers.StartupHelper.AddServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Register Services
+            </summary>
+            <param name="services"></param>
+            <param name="configuration"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

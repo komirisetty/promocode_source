@@ -1,0 +1,22 @@
+[
+  {
+    "label": "Very Dissatisified",
+    "value": "1"
+  },
+  {
+    "label": "Dissatisified",
+    "value": "2"
+  },
+  {
+    "label": "Fair",
+    "value": "3"
+  },
+  {
+    "label": "Satisified",
+    "value": "4"
+  },
+  {
+    "label": "Very Satisified",
+    "value": "5"
+  }
+]

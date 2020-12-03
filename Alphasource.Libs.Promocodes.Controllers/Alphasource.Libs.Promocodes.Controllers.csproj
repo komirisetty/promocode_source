@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Alphasource.Libs.Promocodes.Business\Alphasource.Libs.Promocodes.Business.Impl.csproj" />
+    <ProjectReference Include="..\Alphasource.Libs.Promocodes.Models\Alphasource.Libs.Promocodes.Models.csproj" />
+    <ProjectReference Include="..\Alphasource.Libs.Promocodes.Repositories\Alphasource.Libs.Promocodes.Repositories.Impl.csproj" />
+    <ProjectReference Include="..\Alphasource.Libs.Promocodes.Utilities\Alphasource.Libs.Promocodes.Utilities.csproj" />
+  </ItemGroup>
+
+</Project>

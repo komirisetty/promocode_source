@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.2.7" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="3.1.10" />
+    <PackageReference Include="MongoDB.Driver" Version="2.11.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Alphasource.Libs.Promocodes.Models\Alphasource.Libs.Promocodes.Models.csproj" />
+    <ProjectReference Include="..\Alphasource.Libs.Promocodes.Repositories.Interfaces\Alphasource.Libs.Promocodes.Repositories.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>

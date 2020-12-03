@@ -1,0 +1,18 @@
+[
+  {
+    "label": "Vegetarian",
+    "value": "1"
+  },
+  {
+    "label": "Non-vegetarian",
+    "value": "2"
+  },
+  {
+    "label": "Eggetarian",
+    "value": "3"
+  },
+  {
+    "label": "Vegan",
+    "value": "4"
+  }
+]

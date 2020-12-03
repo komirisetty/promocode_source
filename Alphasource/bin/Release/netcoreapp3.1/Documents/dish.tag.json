@@ -1,0 +1,22 @@
+[
+  {
+    "label": "New",
+    "value": "1"
+  },
+  {
+    "label": "Top Offers",
+    "value": "2"
+  },
+  {
+    "label": "Top Rated",
+    "value": "3"
+  },
+  {
+    "label": "Most Ordered",
+    "value": "4"
+  },
+  {
+    "label": "Popular",
+    "value": "5"
+  }
+]
