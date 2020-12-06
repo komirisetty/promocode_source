@@ -14,6 +14,9 @@ namespace Alphasource.Libs.Promocodes.Repositories.Interface
         Task<FranchisePromocode> Update(FranchisePromocode franchisePromoCodes);
 
         Task<List<FranchisePromocode>> GetAllocatedFranchise(string campaignName);
+        Task<List<FranchisePromocode>> GetAllocatedFranchiseById(string id);
+
+        Task<PromoCodeModel> GetPromocode(string campaignName);
 
         void Delete(string id);
     }

@@ -1,9 +1,6 @@
 ﻿using Alphasource.Libs.Promocodes.Models;
-using Alphasource.Libs.Promocodes.Repositories;
 using Alphasource.Libs.Promocodes.Repositories.Interface;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 
@@ -20,6 +17,12 @@ namespace Alphasource.Libs.Promocodes.Service
         {
             return await _context.GetAllocatedFranchise(campaignName);
         }
+
+        public async Task<List<FranchisePromocode>> GetAllocatedFranchiseById(string id)
+        {
+            return await _context.GetAllocatedFranchiseById(id);
+        }
+
         public async Task<FranchisePromocode> Create(FranchisePromocode allocatePromoCodeToFranchise)
         {
             return await _context.Create(allocatePromoCodeToFranchise);
@@ -28,6 +31,11 @@ namespace Alphasource.Libs.Promocodes.Service
         public async Task<FranchisePromocode> Update(FranchisePromocode allocatePromoCodeToFranchise)
         {
             return await _context.Update(allocatePromoCodeToFranchise);
+        }
+
+        public Task<PromoCodeModel> GetPromocode(string campaignName)
+        {
+            return  _context.GetPromocode(campaignName);
         }
 
         public void Delete(string id)

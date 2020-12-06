@@ -1,27 +1,23 @@
 ﻿using Alphasource.Libs.Promocodes.Models;
-using Alphasource.Libs.Promocodes.Repositories;
-using AutoMapper;
+using Alphasource.Libs.Promocodes.Service;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Alphasource.Libs.Promocodes.Service;
+using Alphasource.Libs.Promocode.Utilities;
 
-namespace Alphasource.Lib.Promocode.Controllers
+namespace Alphasource.Libs.Promocode.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     //[Authorize(Policy = "defaultPolicy")]
-
     public class FranchisePromocodeController : ControllerBase
     {
         private readonly IFranchisePromocodeService _franchiseService;
-        private readonly IMapper _mapper;
         
-        public FranchisePromocodeController(IFranchisePromocodeService FranchiseService, IMapper mapper)
+        public FranchisePromocodeController(IFranchisePromocodeService FranchiseService)
         {
             _franchiseService = FranchiseService;
-            _mapper = mapper;
         }
         /// <summary>
         /// Gets the promocodes given by the franchisee.
@@ -29,19 +25,17 @@ namespace Alphasource.Lib.Promocode.Controllers
         /// <param name="campaignName">campaignName</param>
         /// <returns></returns>
         [HttpGet("CampaignName")]
-        public async Task<ActionResult<List<FranchisePromocode>>> GetAllocatedFranchise(string campaignName)
+        public async Task<ActionResult> GetAllocatedFranchise(string campaignName)
         {
             var promo = await _franchiseService.GetAllocatedFranchise(campaignName);
-            //if (promo == null)
-            //{
-            //    return NotFound(new Response { ErrorMessage = "Data Not found", IsSuccess = false });
-            //}
-
+            if (promo == null)
+            {
+                return NotFound(new Response { ErrorMessage = "Data Not found", IsSuccess = false });
+            }
 
             var list = promo.ToList();
             promo = list.OrderByDescending(x => x.AllocatedDate).ToList();
 
-            //var promoResources = _mapper.Map<List<FranchisePromocode>, List<FranchisePromocode>>(promo);
             return Ok(promo);
 
         }
@@ -51,42 +45,93 @@ namespace Alphasource.Lib.Promocode.Controllers
         /// <param name="saveFranchisePromoCodesResource"></param>
         /// <returns></returns>
         [HttpPost("")]
-        public async Task<ActionResult<FranchisePromocode>> Create([FromBody] FranchisePromocode saveFranchisePromoCodesResource)
+        public async Task<ActionResult> Create([FromBody] FranchisePromocode saveFranchisePromoCodes)
         {
-             //var promo = _mapper.Map<SaveFranchisePromoCodesResource, AllocatePromoCodeToFranchise>(saveFranchisePromoCodesResource);
+            try
+            {
+                ValidatePromocode(saveFranchisePromoCodes);
 
+                var promoCreated = await _franchiseService.Create(saveFranchisePromoCodes);
 
-             var promoCreated = await _franchiseService.Create(saveFranchisePromoCodesResource);
+                return Ok(promoCreated);
+            }
+            catch (Exception exp)
+            {
+                return NotFound(new Response { ErrorMessage = exp.Message, IsSuccess = false });
+            }
 
-            //if (promoCreated == null)
-          //   {
-          //       return NotFound(new Response { ErrorMessage = "Error while allocating promocode", IsSuccess = false });
-        //     }
-
-            //var promoResource = _mapper.Map<AllocatePromoCodeToFranchise, FranchisePromoCodesResource>(promoCreated);
-
-            return Ok(promoCreated);
         }
+        
         /// <summary>
         ///Update the promocode details.
         /// </summary>
         /// <remarks>It is used to update promocode</remarks>
         [HttpPut("")]
-        public async Task<ActionResult<FranchisePromocode>> Update([FromBody] FranchisePromocode saveFranchisePromoCodesResource)
+        public async Task<IActionResult> Update([FromBody] FranchisePromocode saveFranchisePromoCodes)
         {
-           // var promo = _mapper.Map<SaveFranchisePromoCodesResource, AllocatePromoCodeToFranchise>(saveFranchisePromoCodesResource);
+            try
+            {
+                ValidatePromocode(saveFranchisePromoCodes);
 
+                var promoCreated = await _franchiseService.Update(saveFranchisePromoCodes);
 
-            var promoCreated = await _franchiseService.Update(saveFranchisePromoCodesResource);
-
-           // if (promoCreated == null)
-            //{
-              //  return NotFound(new Response { ErrorMessage = "Error while allocating promocode", IsSuccess = false });
-            //}
-
-            //var promoResource = _mapper.Map<AllocatePromoCodeToFranchise, FranchisePromoCodesResource>(promoCreated);
-
-            return Ok(promoCreated);
+                return Ok(promoCreated);
+            }
+            catch (Exception exp)
+            {
+                return NotFound(new Response { ErrorMessage = exp.Message, IsSuccess = false });
+            }
         }
+
+        /// <summary>
+        ///Delete the Allocation.
+        /// </summary>
+        /// <remarks>It is used to delete a promocode allocation from Franchise</remarks>
+        /// <param name="id">id is used to filter particular franchiese and delete</param>
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(string id)
+        {
+            var data = await _franchiseService.GetAllocatedFranchise(id);
+            if (data == null)
+            {
+                return NotFound(new Response { ErrorMessage = "Data Not found", IsSuccess = false });
+            }
+            _franchiseService.Delete(id);
+
+            return Ok(new Response { ErrorMessage = "", IsSuccess = true });
+        }
+
+        private void ValidatePromocode(FranchisePromocode saveFranchisePromoCodes)
+        {
+            var validateName = !string.IsNullOrEmpty(saveFranchisePromoCodes.CampaignName) &&
+                this._franchiseService != default(IFranchisePromocodeService);
+
+            var validatePromocode = saveFranchisePromoCodes.AllocatedPromoCode >= 0;
+
+            if (!validateName)
+                throw new Exception("CampaignName is mandatory");
+            if (!validatePromocode)
+                throw new Exception("AllocatePromoCode is mandatory");
+
+            var promocodeResult = _franchiseService.GetPromocode(saveFranchisePromoCodes.CampaignName);
+            PromoCodeModel promocode = promocodeResult.Result;
+            if (promocode == null)
+            {
+                throw new Exception("Invalid CampaignName.");
+            }
+
+            var totalpromocode = promocode.NoOfPromoCodes;
+            if (saveFranchisePromoCodes.AllocatedPromoCode > totalpromocode)
+            {
+                throw new Exception("Allocated promocode cannot exceed total promocode.");
+            }
+
+            var promocodeEnddate = promocode.EndDate;
+            if (promocodeEnddate < System.DateTime.Now)
+            {
+                throw new Exception("CampaignName is not valid.");
+            }
+        }
+
     }
 }

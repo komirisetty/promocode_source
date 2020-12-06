@@ -6,7 +6,9 @@ namespace Alphasource.Libs.Promocodes.Repositories.Interface
     public interface IDatabaseSettings
     {
 
-        IMongoCollection<FranchisePromocode> AllocatePromoCodeToFranchise { get; }
+        IMongoCollection<FranchisePromocode> FranchisePromocode { get; }
+
+        IMongoCollection<PromoCodeModel> Promocode { get; }
 
     }
 }

@@ -14,7 +14,7 @@ namespace Alphasource.Libs.Promocodes.Repositories
     public class FranchisePromocodeRepository : IFranchisePromocodeRepository
     {
         private readonly IDatabaseSettings _context;
-   
+
 
         public FranchisePromocodeRepository(IDatabaseSettings context)
         {
@@ -32,7 +32,7 @@ namespace Alphasource.Libs.Promocodes.Repositories
             //        .FirstOrDefaultAsync();
             //if (promodetaiils == null)
             //{
-            await _context.AllocatePromoCodeToFranchise.InsertOneAsync(franchisePromoCodes);
+            await _context.FranchisePromocode.InsertOneAsync(franchisePromoCodes);
             return franchisePromoCodes;
             //}
 
@@ -52,8 +52,8 @@ namespace Alphasource.Libs.Promocodes.Repositories
                 Set("CancelledUser", franchisePromoCodes.CancelledUser).
                 Set("CancelledDate", franchisePromoCodes.CancelledDate).
                 Set("CancellationReason", franchisePromoCodes.CancellationReason);
-                
-            var result = _context.AllocatePromoCodeToFranchise.FindOneAndUpdateAsync(filter, updateAllocation);
+
+            var result = _context.FranchisePromocode.FindOneAndUpdateAsync(filter, updateAllocation);
 
             return result;
         }
@@ -61,8 +61,17 @@ namespace Alphasource.Libs.Promocodes.Repositories
         public async Task<List<FranchisePromocode>> GetAllocatedFranchise(string campaignName)
         {
             return await _context
-                                 .AllocatePromoCodeToFranchise
+                                 .FranchisePromocode
                                  .Find(m => m.CampaignName == campaignName && m.IsActive == true)
+                                 .ToListAsync();
+        }
+        public async Task<List<FranchisePromocode>> GetAllocatedFranchiseById(string id)
+        {
+            ObjectId idMongo = new ObjectId(id);
+
+            return await _context
+                                 .FranchisePromocode
+                                 .Find(m => m.Id == idMongo && m.IsActive == true)
                                  .ToListAsync();
         }
 
@@ -72,7 +81,38 @@ namespace Alphasource.Libs.Promocodes.Repositories
             FilterDefinition<FranchisePromocode> filter = Builders<FranchisePromocode>.Filter.Eq(m => m.Id, idMongo);
 
             var update = Builders<FranchisePromocode>.Update.Set("IsActive", false);
-            _context.AllocatePromoCodeToFranchise.FindOneAndUpdate(filter, update);
+            _context.FranchisePromocode.FindOneAndUpdate(filter, update);
         }
+
+        public async Task<PromoCodeModel> GetPromocode(string campaignName)
+        {
+            return await _context
+                                  .Promocode
+                                  .Find(m => m.CampaignName == campaignName && m.CampaignStatus == "active")
+                                  .FirstOrDefaultAsync();
+        }
+
+        public void Validate(FranchisePromocode franchisePromoCodes)
+        {
+            var result = _context
+                                 .Promocode
+                                 .Find(m => m.CampaignName == franchisePromoCodes.CampaignName && m.CampaignStatus == "active")
+                                 .ToList();
+
+            if (result.Count ==0)
+            {
+                throw new Exception("Invalid CampaignName.");
+            }
+
+            List<PromoCodeModel> franchiseDetails = _context
+                                 .Promocode
+                                 .Find(m => m.CampaignName == franchisePromoCodes.CampaignName && m.CampaignStatus == "active")
+                                 .ToList();
+            if (franchisePromoCodes.AllocatedPromoCode > franchiseDetails[0].NoOfPromoCodes)
+            {
+                throw new Exception("Allocated Promocode cannot exceed total promocode.");
+            }
+        }
+
     }
 }
