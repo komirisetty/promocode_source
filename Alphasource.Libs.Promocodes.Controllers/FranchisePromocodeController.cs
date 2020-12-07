@@ -3,6 +3,7 @@ using Alphasource.Libs.Promocodes.Service;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Alphasource.Libs.Promocode.Utilities;
 
@@ -14,7 +15,10 @@ namespace Alphasource.Libs.Promocode.Controllers
     public class FranchisePromocodeController : ControllerBase
     {
         private readonly IFranchisePromocodeService _franchiseService;
-        
+        /// <summary>
+        /// Main controller to Allocate promocode to franchisee 
+        /// </summary>
+        /// <param name="FranchiseService">Contractor for the FranchisePromocode contoller</param>
         public FranchisePromocodeController(IFranchisePromocodeService FranchiseService)
         {
             _franchiseService = FranchiseService;
@@ -61,9 +65,9 @@ namespace Alphasource.Libs.Promocode.Controllers
             }
 
         }
-        
+
         /// <summary>
-        ///Update the promocode details.
+        ///Update the promocode details for the franchise.
         /// </summary>
         /// <remarks>It is used to update promocode</remarks>
         [HttpPut("")]
@@ -84,10 +88,10 @@ namespace Alphasource.Libs.Promocode.Controllers
         }
 
         /// <summary>
-        ///Delete the Allocation.
+        ///Delete the promocode allocation from the franchise.
         /// </summary>
         /// <remarks>It is used to delete a promocode allocation from Franchise</remarks>
-        /// <param name="id">id is used to filter particular franchiese and delete</param>
+        /// <param name="id">id is used to filter particular franchiese</param>
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(string id)
         {
@@ -101,6 +105,10 @@ namespace Alphasource.Libs.Promocode.Controllers
             return Ok(new Response { ErrorMessage = "", IsSuccess = true });
         }
 
+        /// <summary>
+        /// Validate promocode data before saving the allocation to the franchise
+        /// </summary>
+        /// <param name="saveFranchisePromoCodes"></param>
         private void ValidatePromocode(FranchisePromocode saveFranchisePromoCodes)
         {
             var validateName = !string.IsNullOrEmpty(saveFranchisePromoCodes.CampaignName) &&
@@ -121,6 +129,7 @@ namespace Alphasource.Libs.Promocode.Controllers
             }
 
             var totalpromocode = promocode.NoOfPromoCodes;
+           
             if (saveFranchisePromoCodes.AllocatedPromoCode > totalpromocode)
             {
                 throw new Exception("Allocated promocode cannot exceed total promocode.");
