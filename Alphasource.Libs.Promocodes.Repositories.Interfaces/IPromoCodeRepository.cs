@@ -8,13 +8,5 @@ namespace Alphasource.Libs.Promocodes.Repositories.Interface
     public interface IPromoCodeRepository
     {
         Task<IEnumerable<PromoCodeModel>> GetPromoCodeByCampaign(string campaignName);
-
-        Task<IEnumerable<PromoCodeModel>> SearchCampaign(string campaign);
-
-        IEnumerable<PromoCodeModel> ViewCampaign();
-
-        public PromoCodeModel CreateNewCampaign(PromoCodeModel addNewCampaign);
-
-        public Task UpdateCampaign(PromoCodeModel exixstingCampaign);
     }
 }

@@ -13,7 +13,7 @@ namespace Alphasource.Libs.Promocodes.Business.Tests
     public class FranchisePromocodeServiceTest
     {
         [Fact]
-        public async void CreateFranchiesPromocodeReturnNotValidResults()
+        public async void CreateFranchiesPromocodeReturnValidResults()
         {
             string id = It.IsAny<string>();
             var mockRepository = new MockRepository(MockBehavior.Default);
@@ -30,6 +30,105 @@ namespace Alphasource.Libs.Promocodes.Business.Tests
            Assert.NotNull(result);
 
            Assert.IsType<FranchisePromocode>(result);
+        }
+
+        [Fact]
+        public async void UpdateFranchiesPromocodeReturnValidResults()
+        {
+            string id = It.IsAny<string>();
+            var mockRepository = new MockRepository(MockBehavior.Default);
+            var mockfranchisePromocodeService = mockRepository.Create<IFranchisePromocodeRepository>();
+            FranchisePromocode code = new FranchisePromocode() { CampaignName = "C1", FranchiseName = "F2", AllocatedPromoCode = 10, TotalPromoCode = 20, Location = "L1", AllocatedUser = "User1", IsActive = true };
+
+            mockfranchisePromocodeService
+              .Setup(service => service.Update(code))
+              .ReturnsAsync(code);
+
+            var franchisePromocodeController = new FranchisePromocodeService(mockfranchisePromocodeService.Object);
+            var result = await franchisePromocodeController.Update(code);
+
+            Assert.NotNull(result);
+
+            Assert.IsType<FranchisePromocode>(result);
+        }
+
+        [Fact]
+        public async void GetFranchiesPromocodeReturnValidResults()
+        {
+            string id = It.IsAny<string>();
+            var mockRepository = new MockRepository(MockBehavior.Default);
+            var mockfranchisePromocodeService = mockRepository.Create<IFranchisePromocodeRepository>();
+            FranchisePromocode code = new FranchisePromocode() { CampaignName = "C1", FranchiseName = "F2", AllocatedPromoCode = 10, TotalPromoCode = 20, Location = "L1", AllocatedUser = "User1", IsActive = true };
+
+            mockfranchisePromocodeService
+              .Setup(service => service.Update(code))
+              .ReturnsAsync(code);
+
+            var franchisePromocodeController = new FranchisePromocodeService(mockfranchisePromocodeService.Object);
+            var result = await franchisePromocodeController.GetAllocatedFranchise(code.CampaignName);
+
+            Assert.NotNull(result);
+
+            Assert.IsType<FranchisePromocode>(result);
+        }
+
+        [Fact]
+        public async void GetFranchiesPromocodeByIdReturnValidResults()
+        {
+            string id = It.IsAny<string>();
+            var mockRepository = new MockRepository(MockBehavior.Default);
+            var mockfranchisePromocodeService = mockRepository.Create<IFranchisePromocodeRepository>();
+            FranchisePromocode code = new FranchisePromocode() { CampaignName = "C1", FranchiseName = "F2", AllocatedPromoCode = 10, TotalPromoCode = 20, Location = "L1", AllocatedUser = "User1", IsActive = true };
+            var mockFranchise = new List<FranchisePromocode>
+            {
+                new FranchisePromocode { CampaignName = "C1", FranchiseName = "F1", AllocatedPromoCode = 10, TotalPromoCode = 20, Location = "L1", AllocatedUser = "User1", IsActive = true},
+                new FranchisePromocode { CampaignName = "C2", FranchiseName = "F2", AllocatedPromoCode = 5, TotalPromoCode = 50, Location = "L2", AllocatedUser = "User2", IsActive = true},
+                new FranchisePromocode { CampaignName = "C3", FranchiseName = "F3", AllocatedPromoCode = 600, TotalPromoCode = 200, Location = "L3", AllocatedUser = "User1", IsActive = true}
+            };
+
+            mockfranchisePromocodeService
+              .Setup(service => service.GetAllocatedFranchiseById(id))
+              .ReturnsAsync(mockFranchise);
+
+            var franchisePromocodeController = new FranchisePromocodeService(mockfranchisePromocodeService.Object);
+            var result = await franchisePromocodeController.GetAllocatedFranchiseById(id);
+
+            Assert.NotNull(result);
+
+            Assert.IsType<FranchisePromocode>(result);
+        }
+
+        [Fact]
+        public async void GePromocodeReturnValidResults()
+        {
+            string id = It.IsAny<string>();
+            var mockRepository = new MockRepository(MockBehavior.Default);
+            var mockfranchisePromocodeService = mockRepository.Create<IFranchisePromocodeRepository>();
+            FranchisePromocode code = new FranchisePromocode() { CampaignName = "C1", FranchiseName = "F2", AllocatedPromoCode = 10, TotalPromoCode = 20, Location = "L1", AllocatedUser = "User1", IsActive = true };
+
+            mockfranchisePromocodeService
+              .Setup(service => service.Update(code))
+              .ReturnsAsync(code);
+
+            var franchisePromocodeController = new FranchisePromocodeService(mockfranchisePromocodeService.Object);
+            var result = await franchisePromocodeController.GetPromocode(code.CampaignName);
+
+            Assert.NotNull(result);
+
+            Assert.IsType<FranchisePromocode>(result);
+        }
+
+        [Fact]
+        public async void DeleteFranchiesPromocodeReturnNotValidResults()
+        {
+            string id = It.IsAny<string>();
+            var mockRepository = new MockRepository(MockBehavior.Default);
+            var mockfranchisePromocodeService = mockRepository.Create<IFranchisePromocodeRepository>();
+
+            var franchisePromocodeController = new FranchisePromocodeService(mockfranchisePromocodeService.Object);
+            franchisePromocodeController.Delete(id);
+
+            //Assert.NotNull(result);
         }
     }
 }

@@ -5,9 +5,9 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Alphasource.Libs.Promocode.Utilities;
+using Alphasource.Libs.Promocodes.Utilities;
 
-namespace Alphasource.Libs.Promocode.Controllers
+namespace Alphasource.Libs.Promocodes.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -34,7 +34,7 @@ namespace Alphasource.Libs.Promocode.Controllers
             var promo = await _franchiseService.GetAllocatedFranchise(campaignName);
             if (promo == null)
             {
-                return NotFound(new Response { ErrorMessage = "Data Not found", IsSuccess = false });
+                return NotFound(new Response { ErrorMessage = AppMessages.ERR_DATA_NOT_FOUND, IsSuccess = false });
             }
 
             var list = promo.ToList();
@@ -54,10 +54,18 @@ namespace Alphasource.Libs.Promocode.Controllers
             try
             {
                 ValidatePromocode(saveFranchisePromoCodes);
+                saveFranchisePromoCodes.AvailablePromoCode = GetTotalPromocode(saveFranchisePromoCodes.CampaignName) - ( GetAllocatedPromocode(saveFranchisePromoCodes.CampaignName) + saveFranchisePromoCodes.AllocatedPromoCode);
+                if (saveFranchisePromoCodes.AvailablePromoCode > 0)
+                {
+                    var promoCreated = await _franchiseService.Create(saveFranchisePromoCodes);
 
-                var promoCreated = await _franchiseService.Create(saveFranchisePromoCodes);
+                    return Ok(promoCreated);
+                }
+                else
+                {
+                    return NotFound(new Response { ErrorMessage = AppMessages.ERR_INVALID_NOPROMOCODE, IsSuccess = false });
+                }
 
-                return Ok(promoCreated);
             }
             catch (Exception exp)
             {
@@ -77,9 +85,17 @@ namespace Alphasource.Libs.Promocode.Controllers
             {
                 ValidatePromocode(saveFranchisePromoCodes);
 
-                var promoCreated = await _franchiseService.Update(saveFranchisePromoCodes);
+                saveFranchisePromoCodes.AvailablePromoCode = GetTotalPromocode(saveFranchisePromoCodes.CampaignName) - (GetAllocatedPromocode(saveFranchisePromoCodes.CampaignName) + saveFranchisePromoCodes.AllocatedPromoCode);
+                if (saveFranchisePromoCodes.AvailablePromoCode > 0)
+                {
+                    var promoCreated = await _franchiseService.Update(saveFranchisePromoCodes);
 
-                return Ok(promoCreated);
+                    return Ok(promoCreated);
+                }
+                else
+                {
+                    return NotFound(new Response { ErrorMessage = AppMessages.ERR_INVALID_NOPROMOCODE, IsSuccess = false });
+                }
             }
             catch (Exception exp)
             {
@@ -98,7 +114,7 @@ namespace Alphasource.Libs.Promocode.Controllers
             var data = await _franchiseService.GetAllocatedFranchise(id);
             if (data == null)
             {
-                return NotFound(new Response { ErrorMessage = "Data Not found", IsSuccess = false });
+                return NotFound(new Response { ErrorMessage = AppMessages.ERR_DATA_NOT_FOUND, IsSuccess = false });
             }
             _franchiseService.Delete(id);
 
@@ -114,33 +130,76 @@ namespace Alphasource.Libs.Promocode.Controllers
             var validateName = !string.IsNullOrEmpty(saveFranchisePromoCodes.CampaignName) &&
                 this._franchiseService != default(IFranchisePromocodeService);
 
-            var validatePromocode = saveFranchisePromoCodes.AllocatedPromoCode >= 0;
+            var validatePromocode = saveFranchisePromoCodes.AllocatedPromoCode > 0;
 
             if (!validateName)
-                throw new Exception("CampaignName is mandatory");
+                throw new Exception(AppMessages.ERR_EMPTY_CAMPAIGNNAME);
             if (!validatePromocode)
-                throw new Exception("AllocatePromoCode is mandatory");
+                throw new Exception(AppMessages.ERR_EMPTY_ALLOCATEDPROMOCODE);
 
-            var promocodeResult = _franchiseService.GetPromocode(saveFranchisePromoCodes.CampaignName);
+          
+            var totalpromocode = GetTotalPromocode(saveFranchisePromoCodes.CampaignName);
+
+            if (saveFranchisePromoCodes.AllocatedPromoCode > totalpromocode)
+            {
+                throw new Exception(AppMessages.ERR_INVALID_ALLOCATEDPROMOCODEXCEED);
+            }
+
+            var promocodeEnddate = GetPromocodeEndDate(saveFranchisePromoCodes.CampaignName);
+            if (promocodeEnddate < System.DateTime.Now)
+            {
+                throw new Exception(AppMessages.ERR_INVALID_ALLOCATEDPROMOCODEEXPIRED);
+            }
+
+
+        }
+
+        private int GetAllocatedPromocode(string campaignName)
+        {
+            var franchiseResult = _franchiseService.GetAllocatedFranchise(campaignName);
+            if (franchiseResult == null)
+            {
+                return 0;
+            }
+
+            //return promo.Result.ToList().OrderByDescending(x => x.AllocatedDate).ToList().FirstOrDefault().AvailablePromoCode;
+            List<FranchisePromocode> franchiseList = franchiseResult.Result;
+            int count = 0;
+            if (franchiseList != null)
+            {
+
+                foreach (var promoCount in franchiseList)
+                {
+                    count = count + promoCount.AllocatedPromoCode;
+                }
+
+            }
+
+            return count;
+        }
+
+        private int GetTotalPromocode(string campaignName)
+        {
+            var promocodeResult = _franchiseService.GetPromocode(campaignName);
             PromoCodeModel promocode = promocodeResult.Result;
             if (promocode == null)
             {
-                throw new Exception("Invalid CampaignName.");
+                throw new Exception(AppMessages.ERR_INVALID_CAMPAIGNNAME);
             }
 
-            var totalpromocode = promocode.NoOfPromoCodes;
-           
-            if (saveFranchisePromoCodes.AllocatedPromoCode > totalpromocode)
-            {
-                throw new Exception("Allocated promocode cannot exceed total promocode.");
-            }
-
-            var promocodeEnddate = promocode.EndDate;
-            if (promocodeEnddate < System.DateTime.Now)
-            {
-                throw new Exception("CampaignName is not valid.");
-            }
+            return promocode.NoOfPromoCodes;
         }
 
+        private DateTime GetPromocodeEndDate(string campaignName)
+        {
+            var promocodeResult = _franchiseService.GetPromocode(campaignName);
+            PromoCodeModel promocode = promocodeResult.Result;
+            if (promocode == null)
+            {
+                throw new Exception(AppMessages.ERR_INVALID_CAMPAIGNNAME);
+            }
+
+            return promocode.EndDate;
+        }
     }
 }

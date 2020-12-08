@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Alphasource.Libs.Promocodes.Service;
 
-namespace AlphaSource.Lib.PromoCode.Helpers
+namespace Alphasource.Libs.Promocodes.Utilities
 {
     public static class StartupHelper
     {

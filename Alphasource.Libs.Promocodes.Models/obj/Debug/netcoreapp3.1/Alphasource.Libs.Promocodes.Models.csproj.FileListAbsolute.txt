@@ -14,4 +14,3 @@ F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Models\obj\Debug\netcore
 F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Models\obj\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Models.csproj.CoreCompileInputs.cache
 F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Models\obj\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Models.dll
 F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Models\obj\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Models.pdb
-F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Models\obj\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Models.csprojAssemblyReference.cache

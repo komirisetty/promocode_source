@@ -47,6 +47,7 @@ namespace Alphasource.Libs.Promocodes.Repositories
             var updateAllocation = Builders<FranchisePromocode>.Update.Set("CampaignName", franchisePromoCodes.CampaignName).
                 Set("FranchiseName", franchisePromoCodes.FranchiseName).
                 Set("AllocatedPromoCode", franchisePromoCodes.AllocatedPromoCode).
+                Set("AvailablePromoCode", franchisePromoCodes.AvailablePromoCode).
                 Set("AllocatedDate", franchisePromoCodes.AllocatedDate).
                 Set("AllocatedUser", franchisePromoCodes.AllocatedUser).
                 Set("CancelledUser", franchisePromoCodes.CancelledUser).

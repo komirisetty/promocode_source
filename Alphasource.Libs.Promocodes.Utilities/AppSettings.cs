@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AlphaSource.Lib.PromoCode.Helpers
+namespace Alphasource.Libs.Promocodes.Utilities
 {
     public class AppSettings
     {

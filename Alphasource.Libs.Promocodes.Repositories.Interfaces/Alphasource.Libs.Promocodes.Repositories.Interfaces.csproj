@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="IPromoCodeRepository.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Alphasource.Libs.Promocodes.Models\Alphasource.Libs.Promocodes.Models.csproj" />
   </ItemGroup>
 
