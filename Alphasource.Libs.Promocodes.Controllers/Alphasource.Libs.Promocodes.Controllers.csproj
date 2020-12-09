@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Alphasource.Libs.Promocodes.Business\Alphasource.Libs.Promocodes.Business.Impl.csproj" />
+    <ProjectReference Include="..\Alphasource.Libs.Promocodes.Controllers.Interfaces\Alphasource.Libs.Promocodes.Controllers.Interfaces.csproj" />
     <ProjectReference Include="..\Alphasource.Libs.Promocodes.Models\Alphasource.Libs.Promocodes.Models.csproj" />
     <ProjectReference Include="..\Alphasource.Libs.Promocodes.Repositories\Alphasource.Libs.Promocodes.Repositories.Impl.csproj" />
     <ProjectReference Include="..\Alphasource.Libs.Promocodes.Utilities\Alphasource.Libs.Promocodes.Utilities.csproj" />

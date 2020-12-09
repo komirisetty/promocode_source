@@ -299,6 +299,7 @@ F:\Anitha\Final\Alphasource\Alphasource\bin\Debug\netcoreapp3.1\runtimes\win\nat
 F:\Anitha\Final\Alphasource\Alphasource\bin\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Business.Impl.dll
 F:\Anitha\Final\Alphasource\Alphasource\bin\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Business.Interfaces.dll
 F:\Anitha\Final\Alphasource\Alphasource\bin\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Controllers.dll
+F:\Anitha\Final\Alphasource\Alphasource\bin\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Controllers.Interfaces.dll
 F:\Anitha\Final\Alphasource\Alphasource\bin\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Models.dll
 F:\Anitha\Final\Alphasource\Alphasource\bin\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Repositories.Impl.dll
 F:\Anitha\Final\Alphasource\Alphasource\bin\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Repositories.Interfaces.dll
@@ -308,6 +309,7 @@ F:\Anitha\Final\Alphasource\Alphasource\bin\Debug\netcoreapp3.1\Alphasource.Libs
 F:\Anitha\Final\Alphasource\Alphasource\bin\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Repositories.Impl.pdb
 F:\Anitha\Final\Alphasource\Alphasource\bin\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Utilities.pdb
 F:\Anitha\Final\Alphasource\Alphasource\bin\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Business.Interfaces.pdb
+F:\Anitha\Final\Alphasource\Alphasource\bin\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Controllers.Interfaces.pdb
 F:\Anitha\Final\Alphasource\Alphasource\bin\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Models.pdb
 F:\Anitha\Final\Alphasource\Alphasource\bin\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Repositories.Interfaces.pdb
 F:\Anitha\Final\Alphasource\Alphasource\obj\Debug\netcoreapp3.1\Alphasource.Hosting.Promocodes.csprojAssemblyReference.cache

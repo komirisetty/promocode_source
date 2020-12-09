@@ -1,5 +1,5 @@
 ﻿using Alphasource.Libs.Promocodes.Models;
-using Alphasource.Libs.Promocodes.Service;
+using Alphasource.Libs.Promocodes.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
@@ -157,12 +157,7 @@ namespace Alphasource.Libs.Promocodes.Controllers
         private int GetAllocatedPromocode(string campaignName)
         {
             var franchiseResult = _franchiseService.GetAllocatedFranchise(campaignName);
-            if (franchiseResult == null)
-            {
-                return 0;
-            }
-
-            //return promo.Result.ToList().OrderByDescending(x => x.AllocatedDate).ToList().FirstOrDefault().AvailablePromoCode;
+           
             List<FranchisePromocode> franchiseList = franchiseResult.Result;
             int count = 0;
             if (franchiseList != null)

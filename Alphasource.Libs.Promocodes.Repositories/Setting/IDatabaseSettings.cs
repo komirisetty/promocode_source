@@ -1,7 +1,7 @@
 ﻿using Alphasource.Libs.Promocodes.Models;
 using MongoDB.Driver;
 
-namespace Alphasource.Libs.Promocodes.Repositories.Interface
+namespace Alphasource.Libs.Promocodes.Repositories.Interfaces
 {
     public interface IDatabaseSettings
     {

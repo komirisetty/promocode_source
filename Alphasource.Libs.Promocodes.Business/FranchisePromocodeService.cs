@@ -1,10 +1,11 @@
 ﻿using Alphasource.Libs.Promocodes.Models;
-using Alphasource.Libs.Promocodes.Repositories.Interface;
+using Alphasource.Libs.Promocodes.Repositories.Interfaces;
+using Alphasource.Libs.Promocodes.Service.Interfaces;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 
-namespace Alphasource.Libs.Promocodes.Service
+namespace Alphasource.Libs.Promocodes.Services
 {
     public class FranchisePromocodeService : IFranchisePromocodeService
     {

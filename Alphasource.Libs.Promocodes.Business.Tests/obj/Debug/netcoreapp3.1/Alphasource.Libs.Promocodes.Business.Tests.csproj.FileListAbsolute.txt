@@ -1,7 +1,3 @@
-F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Business.Tests\obj\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Business.Tests.csprojAssemblyReference.cache
-F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Business.Tests\obj\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Business.Tests.AssemblyInfoInputs.cache
-F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Business.Tests\obj\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Business.Tests.AssemblyInfo.cs
-F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Business.Tests\obj\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Business.Tests.csproj.CoreCompileInputs.cache
 F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Business.Tests\bin\Debug\netcoreapp3.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
 F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Business.Tests\bin\Debug\netcoreapp3.1\xunit.runner.reporters.netcoreapp10.dll
 F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Business.Tests\bin\Debug\netcoreapp3.1\xunit.runner.utility.netcoreapp10.dll
@@ -140,6 +136,10 @@ F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Business.Tests\bin\Debug
 F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Business.Tests\bin\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Repositories.Interfaces.pdb
 F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Business.Tests\bin\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Repositories.Impl.pdb
 F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Business.Tests\bin\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Utilities.pdb
+F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Business.Tests\obj\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Business.Tests.csprojAssemblyReference.cache
+F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Business.Tests\obj\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Business.Tests.AssemblyInfoInputs.cache
+F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Business.Tests\obj\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Business.Tests.AssemblyInfo.cs
+F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Business.Tests\obj\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Business.Tests.csproj.CoreCompileInputs.cache
 F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Business.Tests\obj\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Business.Tests.csproj.CopyComplete
 F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Business.Tests\obj\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Business.Tests.dll
 F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Business.Tests\obj\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Business.Tests.pdb

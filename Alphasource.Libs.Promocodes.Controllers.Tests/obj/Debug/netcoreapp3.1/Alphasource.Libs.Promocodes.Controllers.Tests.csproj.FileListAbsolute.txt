@@ -1,7 +1,3 @@
-F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Controllers.Tests\obj\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Controllers.Tests.csprojAssemblyReference.cache
-F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Controllers.Tests\obj\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Controllers.Tests.AssemblyInfoInputs.cache
-F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Controllers.Tests\obj\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Controllers.Tests.AssemblyInfo.cs
-F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Controllers.Tests\obj\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Controllers.Tests.csproj.CoreCompileInputs.cache
 F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Controllers.Tests\bin\Debug\netcoreapp3.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
 F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Controllers.Tests\bin\Debug\netcoreapp3.1\xunit.runner.reporters.netcoreapp10.dll
 F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Controllers.Tests\bin\Debug\netcoreapp3.1\xunit.runner.utility.netcoreapp10.dll
@@ -143,6 +139,7 @@ F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Controllers.Tests\bin\De
 F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Controllers.Tests\bin\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Business.Impl.dll
 F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Controllers.Tests\bin\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Business.Interfaces.dll
 F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Controllers.Tests\bin\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Controllers.dll
+F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Controllers.Tests\bin\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Controllers.Interfaces.dll
 F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Controllers.Tests\bin\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Models.dll
 F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Controllers.Tests\bin\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Repositories.Impl.dll
 F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Controllers.Tests\bin\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Repositories.Interfaces.dll
@@ -151,9 +148,14 @@ F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Controllers.Tests\bin\De
 F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Controllers.Tests\bin\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Models.pdb
 F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Controllers.Tests\bin\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Business.Impl.pdb
 F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Controllers.Tests\bin\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Business.Interfaces.pdb
+F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Controllers.Tests\bin\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Controllers.Interfaces.pdb
 F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Controllers.Tests\bin\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Repositories.Impl.pdb
 F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Controllers.Tests\bin\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Repositories.Interfaces.pdb
 F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Controllers.Tests\bin\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Utilities.pdb
+F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Controllers.Tests\obj\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Controllers.Tests.csprojAssemblyReference.cache
+F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Controllers.Tests\obj\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Controllers.Tests.AssemblyInfoInputs.cache
+F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Controllers.Tests\obj\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Controllers.Tests.AssemblyInfo.cs
+F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Controllers.Tests\obj\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Controllers.Tests.csproj.CoreCompileInputs.cache
 F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Controllers.Tests\obj\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Controllers.Tests.csproj.CopyComplete
 F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Controllers.Tests\obj\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Controllers.Tests.dll
 F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Controllers.Tests\obj\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Controllers.Tests.pdb

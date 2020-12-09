@@ -126,6 +126,70 @@
         }
       }
     },
+    "F:\\Anitha\\Final\\Alphasource\\Alphasource.Libs.Promocodes.Controllers.Interfaces\\Alphasource.Libs.Promocodes.Controllers.Interfaces.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\Anitha\\Final\\Alphasource\\Alphasource.Libs.Promocodes.Controllers.Interfaces\\Alphasource.Libs.Promocodes.Controllers.Interfaces.csproj",
+        "projectName": "Alphasource.Libs.Promocodes.Controllers.Interfaces",
+        "projectPath": "F:\\Anitha\\Final\\Alphasource\\Alphasource.Libs.Promocodes.Controllers.Interfaces\\Alphasource.Libs.Promocodes.Controllers.Interfaces.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "F:\\Anitha\\Final\\Alphasource\\Alphasource.Libs.Promocodes.Controllers.Interfaces\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "F:\\Anitha\\Final\\Alphasource\\Alphasource.Libs.Promocodes.Models\\Alphasource.Libs.Promocodes.Models.csproj": {
+                "projectPath": "F:\\Anitha\\Final\\Alphasource\\Alphasource.Libs.Promocodes.Models\\Alphasource.Libs.Promocodes.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.Core": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "F:\\Anitha\\Final\\Alphasource\\Alphasource.Libs.Promocodes.Controllers\\Alphasource.Libs.Promocodes.Controllers.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -152,6 +216,9 @@
             "projectReferences": {
               "F:\\Anitha\\Final\\Alphasource\\Alphasource.Libs.Promocodes.Business\\Alphasource.Libs.Promocodes.Business.Impl.csproj": {
                 "projectPath": "F:\\Anitha\\Final\\Alphasource\\Alphasource.Libs.Promocodes.Business\\Alphasource.Libs.Promocodes.Business.Impl.csproj"
+              },
+              "F:\\Anitha\\Final\\Alphasource\\Alphasource.Libs.Promocodes.Controllers.Interfaces\\Alphasource.Libs.Promocodes.Controllers.Interfaces.csproj": {
+                "projectPath": "F:\\Anitha\\Final\\Alphasource\\Alphasource.Libs.Promocodes.Controllers.Interfaces\\Alphasource.Libs.Promocodes.Controllers.Interfaces.csproj"
               },
               "F:\\Anitha\\Final\\Alphasource\\Alphasource.Libs.Promocodes.Models\\Alphasource.Libs.Promocodes.Models.csproj": {
                 "projectPath": "F:\\Anitha\\Final\\Alphasource\\Alphasource.Libs.Promocodes.Models\\Alphasource.Libs.Promocodes.Models.csproj"

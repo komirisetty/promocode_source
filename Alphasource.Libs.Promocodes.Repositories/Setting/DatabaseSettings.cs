@@ -1,5 +1,5 @@
 ﻿using Alphasource.Libs.Promocodes.Models;
-using Alphasource.Libs.Promocodes.Repositories.Interface;
+using Alphasource.Libs.Promocodes.Repositories.Interfaces;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 

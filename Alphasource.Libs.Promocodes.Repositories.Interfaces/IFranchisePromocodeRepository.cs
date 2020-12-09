@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Alphasource.Libs.Promocodes.Repositories.Interface
+namespace Alphasource.Libs.Promocodes.Repositories.Interfaces
 {
    public interface IFranchisePromocodeRepository
     {

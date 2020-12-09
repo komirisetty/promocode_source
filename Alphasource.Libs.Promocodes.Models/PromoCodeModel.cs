@@ -10,13 +10,13 @@ namespace Alphasource.Libs.Promocodes.Models
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string _id { get; set; }
-       
+
         [BsonElement("campaignName")]
         public string CampaignName { get; set; }
-       
+
         [BsonElement("noOfPromoCodes")]
         public int NoOfPromoCodes { get; set; }
-       
+
         [BsonElement("promocodeCost")]
         public int PromocodeCost { get; set; }
 

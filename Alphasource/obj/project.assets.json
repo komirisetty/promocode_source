@@ -2322,6 +2322,7 @@
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
           "Alphasource.Libs.Promocodes.Business.Impl": "1.0.0",
+          "Alphasource.Libs.Promocodes.Controllers.Interfaces": "1.0.0",
           "Alphasource.Libs.Promocodes.Models": "1.0.0",
           "Alphasource.Libs.Promocodes.Repositories.Impl": "1.0.0",
           "Alphasource.Libs.Promocodes.Utilities": "1.0.0",
@@ -2333,6 +2334,20 @@
         },
         "runtime": {
           "bin/placeholder/Alphasource.Libs.Promocodes.Controllers.dll": {}
+        }
+      },
+      "Alphasource.Libs.Promocodes.Controllers.Interfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Alphasource.Libs.Promocodes.Models": "1.0.0",
+          "Microsoft.AspNetCore.Mvc.Core": "2.2.5"
+        },
+        "compile": {
+          "bin/placeholder/Alphasource.Libs.Promocodes.Controllers.Interfaces.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Alphasource.Libs.Promocodes.Controllers.Interfaces.dll": {}
         }
       },
       "Alphasource.Libs.Promocodes.Models/1.0.0": {
@@ -7467,6 +7482,11 @@
       "type": "project",
       "path": "../Alphasource.Libs.Promocodes.Controllers/Alphasource.Libs.Promocodes.Controllers.csproj",
       "msbuildProject": "../Alphasource.Libs.Promocodes.Controllers/Alphasource.Libs.Promocodes.Controllers.csproj"
+    },
+    "Alphasource.Libs.Promocodes.Controllers.Interfaces/1.0.0": {
+      "type": "project",
+      "path": "../Alphasource.Libs.Promocodes.Controllers.Interfaces/Alphasource.Libs.Promocodes.Controllers.Interfaces.csproj",
+      "msbuildProject": "../Alphasource.Libs.Promocodes.Controllers.Interfaces/Alphasource.Libs.Promocodes.Controllers.Interfaces.csproj"
     },
     "Alphasource.Libs.Promocodes.Models/1.0.0": {
       "type": "project",

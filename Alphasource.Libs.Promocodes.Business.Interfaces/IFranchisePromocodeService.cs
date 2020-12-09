@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Alphasource.Libs.Promocodes.Service
+namespace Alphasource.Libs.Promocodes.Service.Interfaces
 {
     public interface IFranchisePromocodeService
     {

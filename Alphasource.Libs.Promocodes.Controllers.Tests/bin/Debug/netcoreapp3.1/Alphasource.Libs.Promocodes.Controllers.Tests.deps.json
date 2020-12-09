@@ -1757,6 +1757,7 @@
       "Alphasource.Libs.Promocodes.Controllers/1.0.0": {
         "dependencies": {
           "Alphasource.Libs.Promocodes.Business.Impl": "1.0.0",
+          "Alphasource.Libs.Promocodes.Controllers.Interfaces": "1.0.0",
           "Alphasource.Libs.Promocodes.Models": "1.0.0",
           "Alphasource.Libs.Promocodes.Repositories.Impl": "1.0.0",
           "Alphasource.Libs.Promocodes.Utilities": "1.0.0",
@@ -1765,6 +1766,15 @@
         },
         "runtime": {
           "Alphasource.Libs.Promocodes.Controllers.dll": {}
+        }
+      },
+      "Alphasource.Libs.Promocodes.Controllers.Interfaces/1.0.0": {
+        "dependencies": {
+          "Alphasource.Libs.Promocodes.Models": "1.0.0",
+          "Microsoft.AspNetCore.Mvc.Core": "2.2.5"
+        },
+        "runtime": {
+          "Alphasource.Libs.Promocodes.Controllers.Interfaces.dll": {}
         }
       },
       "Alphasource.Libs.Promocodes.Models/1.0.0": {
@@ -2869,6 +2879,11 @@
       "sha512": ""
     },
     "Alphasource.Libs.Promocodes.Controllers/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Alphasource.Libs.Promocodes.Controllers.Interfaces/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
