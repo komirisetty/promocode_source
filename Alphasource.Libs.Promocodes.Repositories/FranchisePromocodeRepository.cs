@@ -68,18 +68,18 @@ namespace Alphasource.Libs.Promocodes.Repositories
         }
         public async Task<List<FranchisePromocode>> GetAllocatedFranchiseById(string id)
         {
-            ObjectId idMongo = new ObjectId(id);
+            //ObjectId idMongo = new ObjectId(id);
 
             return await _context
                                  .FranchisePromocode
-                                 .Find(m => m.Id == idMongo && m.IsActive == true)
+                                 .Find(m => m.Id == id && m.IsActive == true)
                                  .ToListAsync();
         }
 
         public void Delete(string id)
         {
-            ObjectId idMongo = new ObjectId(id);
-            FilterDefinition<FranchisePromocode> filter = Builders<FranchisePromocode>.Filter.Eq(m => m.Id, idMongo);
+            //ObjectId idMongo = new ObjectId(id);
+            FilterDefinition<FranchisePromocode> filter = Builders<FranchisePromocode>.Filter.Eq(m => m.Id, id);
 
             var update = Builders<FranchisePromocode>.Update.Set("IsActive", false);
             _context.FranchisePromocode.FindOneAndUpdate(filter, update);

@@ -14,8 +14,10 @@ namespace Alphasource.Libs.Promocodes.Repositories
             _db = client.GetDatabase(options.Value.Database);
         }
 
-        public IMongoCollection<FranchisePromocode> FranchisePromocode => _db.GetCollection<FranchisePromocode>("PromoCodeAllocationToFranchise");
+        public IMongoCollection<FranchisePromocode> FranchisePromocode => _db.GetCollection<FranchisePromocode>("FranchisePromocode");//PromoCodeAllocationToFranchise
 
         public IMongoCollection<PromoCodeModel> Promocode => _db.GetCollection<PromoCodeModel>("GeneratePromoCode");
+
+        public IMongoCollection<FranchiseConsumer> FranchiseConsumer => _db.GetCollection<FranchiseConsumer>("FranchiseConsumer");
     }
 }

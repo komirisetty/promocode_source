@@ -55,8 +55,9 @@ namespace Alphasource.Libs.Promocodes.Controllers
             {
                 ValidatePromocode(saveFranchisePromoCodes);
                 saveFranchisePromoCodes.AvailablePromoCode = GetTotalPromocode(saveFranchisePromoCodes.CampaignName) - ( GetAllocatedPromocode(saveFranchisePromoCodes.CampaignName) + saveFranchisePromoCodes.AllocatedPromoCode);
-                if (saveFranchisePromoCodes.AvailablePromoCode > 0)
+                if (saveFranchisePromoCodes.AvailablePromoCode >= 0)
                 {
+                    saveFranchisePromoCodes.Id = "";
                     var promoCreated = await _franchiseService.Create(saveFranchisePromoCodes);
 
                     return Ok(promoCreated);

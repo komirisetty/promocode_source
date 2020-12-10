@@ -5,10 +5,10 @@ using MongoDB.Bson.Serialization.Attributes;
 namespace Alphasource.Libs.Promocodes.Models
 {
         public class FranchisePromocode
-        {
+    {
             [BsonId]
             [BsonRepresentation(BsonType.ObjectId)]
-            public ObjectId Id { get; set; }
+            public string Id { get; set; }
 
             public string CampaignName { get; set; }
             public string Location { get; set; }

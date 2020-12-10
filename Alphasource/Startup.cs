@@ -56,12 +56,21 @@ namespace Alphasource.Libs.Promocode
 
 
 
-            services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+            //services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+            //{
+            //    builder.AllowAnyOrigin()
+            //           .AllowAnyMethod()
+            //           .AllowAnyHeader();
+            //}));
+
+            //CORS 
+            services.AddCors(options => options.AddPolicy("CROS", corsPolicyBuilder =>
             {
-                builder.AllowAnyOrigin()
-                       .AllowAnyMethod()
-                       .AllowAnyHeader();
+                corsPolicyBuilder.SetIsOriginAllowed(x => true)
+                                 .AllowAnyMethod()
+                                 .AllowAnyHeader();
             }));
+
 
             // Swagger
             services.AddSwaggerGen(c =>
@@ -90,8 +99,8 @@ namespace Alphasource.Libs.Promocode
             app.UseAuthentication();
             app.UseStaticFiles();
             app.UseRouting();
-            app.UseAuthorization();
-            app.UseCors("MyPolicy");
+            app.UseCors("CROS");
+            app.UseAuthorization();           
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

@@ -10,5 +10,7 @@ namespace Alphasource.Libs.Promocodes.Repositories.Interfaces
 
         IMongoCollection<PromoCodeModel> Promocode { get; }
 
+        IMongoCollection<FranchiseConsumer> FranchiseConsumer { get; }
+
     }
 }

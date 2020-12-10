@@ -23,6 +23,7 @@ namespace Alphasource.Libs.Promocodes.Utilities
         public static IServiceCollection AddRepositories(this IServiceCollection services ,IConfiguration configuration) 
         {
             services.AddScoped<IFranchisePromocodeRepository, FranchisePromocodeRepository>();
+            services.AddScoped<IFranchiseConsumerRepository, FranchiseConsumerRepository>();
             services.AddScoped<IPromoCodeRepository, PromoCodeRepository>();
 
             services.AddTransient<IDatabaseSettings, DatabaseSettings>();
@@ -40,6 +41,7 @@ namespace Alphasource.Libs.Promocodes.Utilities
         {
             services.AddTransient<IFranchisePromocodeService, FranchisePromocodeService>();
             services.AddTransient<IPromoCodeDoaminServices, PromoCodeDomainServices>();
+            services.AddTransient<IFranchiseConsumerService, FranchiseConsumerService>();
 
             return services;
         }

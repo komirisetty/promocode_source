@@ -9,6 +9,7 @@ F:\Anitha\Final\Alphasource.Libs.Promocodes.Models\obj\Debug\netcoreapp3.1\Alpha
 F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Models\bin\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Models.deps.json
 F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Models\bin\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Models.dll
 F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Models\bin\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Models.pdb
+F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Models\obj\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Models.csprojAssemblyReference.cache
 F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Models\obj\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Models.AssemblyInfoInputs.cache
 F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Models\obj\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Models.AssemblyInfo.cs
 F:\Anitha\Final\Alphasource\Alphasource.Libs.Promocodes.Models\obj\Debug\netcoreapp3.1\Alphasource.Libs.Promocodes.Models.csproj.CoreCompileInputs.cache

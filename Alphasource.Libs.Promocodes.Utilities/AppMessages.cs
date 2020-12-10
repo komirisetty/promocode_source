@@ -8,6 +8,10 @@
 
         public static string ERR_EMPTY_CAMPAIGNNAME = "CampaignName is mandatory";
 
+        public static string ERR_EMPTY_FRANCHISENAME = "Franchise is mandatory";
+
+        public static string ERR_EMPTY_PROMOCODEID = "PromocodeId is mandatory";
+
         public static string ERR_EMPTY_ALLOCATEDPROMOCODE = "AllocatedPromoCode is mandatory";
 
         public static string ERR_INVALID_ALLOCATEDPROMOCODEXCEED = "Allocated promocode cannot exceed total promocode";
