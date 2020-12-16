@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: foodyhive-dep
+  labels:
+    app: foodyhiveb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: foodyhiveb
+  template:
+    metadata:
+      labels:
+        app: foodyhiveb
+    spec:
+      containers:
+      - name: foodyhive-api
+        image: foodyhiveacr.azurecr.io/promocode:promoapiimg
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        env:
+        - name: ASPNETCORE_ENVIRONMENT
+          value: Production
