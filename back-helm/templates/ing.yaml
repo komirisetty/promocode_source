@@ -8,8 +8,8 @@ metadata:
   namespace: default
 spec:
   rules:
-    - host: myingress.eastus.cloudapp.azure.com
-      http:
+    #- host: myingress.eastus.cloudapp.azure.com
+    - http:
         paths:
         - path: /
           backend:
