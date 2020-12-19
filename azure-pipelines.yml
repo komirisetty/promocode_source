@@ -17,7 +17,8 @@ variables:
   tag: 'updatedapiimg'
   
   # Agent VM image name
-  vmImageName: 'ubuntu-latest'
+  pool: 'paks-vm'
+  vmImageName: 'ubuntu-18.04'
 
 stages:
 - stage: Build
@@ -25,8 +26,8 @@ stages:
   jobs:  
   - job: Build
     displayName: Build
-    pool:
-      vmImage: $(vmImageName)
+    pool: 'paks-vm'
+      #vmImage: $(vmImageName)
     steps:
     - task: Docker@2
       displayName: Build and push an image to container registry
@@ -37,3 +38,27 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
+    - task: HelmDeploy@0
+      inputs:
+        connectionType: 'Azure Resource Manager'
+        azureSubscription: 'Azure Pass - Sponsorship(3600bf8e-793d-4319-8d40-75c0e7fbcc76)'
+        azureResourceGroup: 'foodyhiverg'
+        kubernetesCluster: 'foodyhiveaks'
+        useClusterAdmin: true
+        namespace: 'backend'
+        command: delete
+        arguments: backrelease
+      displayName: 'helm remove from aks cluster'
+    - task: HelmDeploy@0
+      inputs:
+        connectionType: 'Azure Resource Manager'
+        azureSubscription: 'Azure Pass - Sponsorship(3600bf8e-793d-4319-8d40-75c0e7fbcc76)'
+        azureResourceGroup: 'foodyhiverg'
+        kubernetesCluster: 'foodyhiveaks'
+        useClusterAdmin: true
+        namespace: 'backend'
+        command: install
+        chartType: FilePath
+        chartPath: back-helm
+        releaseName: backrelease
+      displayName: 'helm deploy to aks cluster'      
