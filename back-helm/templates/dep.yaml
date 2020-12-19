@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: foodyhive-api
-        image: foodyhiveacr.azurecr.io/promocode:promoapiimg
+        image: foodyhiveacr.azurecr.io/komirisettypromocodesource:updatedapiimg
         imagePullPolicy: Always
         ports:
         - containerPort: 80
